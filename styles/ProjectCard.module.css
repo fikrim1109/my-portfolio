@@ -1,0 +1,65 @@
+.card {
+    background-color: #111; /* Slightly lighter than background */
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image stays within rounded corners */
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Subtle white glow */
+  }
+  
+  .imageContainer {
+    position: relative; /* Needed for Image with layout="fill" */
+    width: 100%;
+    padding-top: 56.25%; /* Aspect ratio 16:9 */
+    overflow: hidden; /* Keep image hover effect contained */
+  }
+  
+  .image {
+    transition: transform 0.3s ease-in-out; /* Smooth transition for zoom */
+  }
+  
+  .card:hover .image {
+    transform: scale(1.05); /* Zoom effect on card hover */
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.6;
+  }
+  
+  /* Optional link styling */
+  /*
+  .links {
+    margin-top: 15px;
+  }
+  
+  .links a {
+    color: #fff;
+    margin-right: 15px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+  
+  .links a:hover {
+    color: #aaa;
+  }
+  */

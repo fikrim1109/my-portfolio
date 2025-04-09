@@ -1,0 +1,18 @@
+.burgerButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+  }
+  
+  .line {
+    stroke: #ffffff;
+  }
+  
+  /* Optional: Hide on larger screens if sidebar is static */
+  /* @media (min-width: 768px) { .burgerButton { display: none; } } */

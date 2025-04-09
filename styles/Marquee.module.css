@@ -1,0 +1,41 @@
+.marqueeContainer {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px 0; /* Increased padding */
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    margin: 40px 0;
+  }
+  
+  .marqueeTrack {
+    display: inline-block;
+    white-space: nowrap; /* Ensure items stay in one line */
+  }
+  
+  .marqueeItem {
+    display: inline-flex; /* Use flex for icon + text alignment */
+    align-items: center;
+    padding: 0 40px; /* Spacing between items */
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ccc; /* Slightly dimmer than pure white */
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Added transform */
+    cursor: default; /* Indicate non-clickable */
+  }
+  
+  .marqueeItem:hover {
+    color: #ffffff; /* Brighten on hover */
+    transform: scale(1.05); /* Slight scale effect */
+  }
+  
+  .iconWrapper {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.8rem; /* Adjust icon size */
+    display: inline-flex; /* Ensures icon aligns well */
+    align-items: center;
+  }
+  
+  .itemName {
+     white-space: nowrap; /* Prevent text wrapping */
+  }

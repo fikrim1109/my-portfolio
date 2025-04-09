@@ -1,0 +1,22 @@
+.layoutContainer {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  .mainContent {
+    flex-grow: 1;
+    padding: 40px;
+    margin-left: 0;
+    transition: margin-left 0.3s ease-in-out;
+  }
+  
+  .contentShift {
+     /* No shift needed on mobile as sidebar overlays */
+  }
+  
+  /* Optional: Shift content for static sidebar on larger screens */
+  /* @media (min-width: 768px) { */
+  /*   .mainContent { margin-left: 250px; } */
+  /*   .contentShift { margin-left: 250px; } */
+  /* } */

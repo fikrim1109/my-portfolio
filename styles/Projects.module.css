@@ -1,0 +1,30 @@
+.projectsSection {
+    width: 100%;
+    max-width: 1200px; /* Limit content width */
+    margin: 60px auto; /* Add space above/below and center */
+    padding: 0 20px; /* Padding on smaller screens */
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ffffff;
+  }
+  
+  .projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between cards */
+  }
+  
+  @media (max-width: 768px) {
+    .sectionTitle {
+      font-size: 1.8rem;
+    }
+    .projectsGrid {
+      grid-template-columns: 1fr; /* Stack cards on smaller screens */
+      gap: 25px;
+    }
+  }
