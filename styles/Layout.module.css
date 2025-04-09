@@ -6,35 +6,21 @@
   
   .mainContent {
     flex-grow: 1;
-    /* Padding moved to individual page containers or specific sections if needed globally */
-    padding: 0; /* Remove layout padding, handle it per-page/section */
-    margin-left: 0; /* Default state (sidebar closed or overlaying) */
-    transition: margin-right 0.3s ease-in-out; /* Changed to margin-right for right sidebar */
-    display: flex; /* Use flexbox to help children fill height */
+    padding: 0; /* Remove layout padding */
+    margin-left: 0;
+    transition: margin-right 0.3s ease-in-out;
+    display: flex; /* Make mainContent a flex container */
     flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    width: 100%; /* Ensure it takes full width */
+    overflow-y: auto; /* Allow scrolling if content exceeds viewport */
   }
   
-  /* No content shift needed on mobile as sidebar overlays */
+  /* No shift needed as sidebar overlays */
   .contentShift {
      /* Mobile: no shift */
   }
   
-  /* Optional: Shift content ONLY on larger screens when sidebar might be static */
-  /* Keep sidebar overlaying on all screens for this setup */
-  /*
-  @media (min-width: 768px) {
-    .mainContent {
-      margin-right: 250px; // Make space for static sidebar on right
-    }
-     .contentShift { // This class might not be needed if sidebar is static
-       margin-right: 250px;
-     }
-  }
-  */
-  
-  /* Ensure main content pushes footer down even if short */
-  .mainContent > * { /* Target direct children like page containers */
-      flex-grow: 1;
-      display: flex; /* Ensures the child itself can use flex properties */
-      flex-direction: column;
-  }
+  /* No need for the direct child selector anymore */
+  /* .mainContent > * { ... } */

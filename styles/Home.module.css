@@ -1,22 +1,23 @@
-/* Container uses flex to center content vertically and horizontally */
+/* Container focuses on width and internal layout */
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Horizontal centering of items */
-    justify-content: center; /* Vertical centering of items */
-    min-height: 100%; /* Take at least full height of parent (mainContent) */
-    width: 100%;
-    padding: 20px 0; /* Vertical padding, horizontal handled by parent */
+    align-items: center; /* Keep items centered horizontally */
+    width: 100%; /* Take full width available from mainContent */
+    /* Remove properties handled by mainContent: */
+    /* justify-content: center; */
+    /* min-height: 100%; */
+    /* flex-grow: 1; */
+    padding: 40px 0; /* Add vertical padding */
     text-align: center;
-    flex-grow: 1; /* Ensure it grows to fill mainContent space */
   }
   
   .heroSection {
-    /* Removed margin-top, rely on container centering */
+    /* Removed margin-top */
     margin-bottom: 40px;
-    width: 100%; /* Ensure it takes full width */
-    max-width: 800px; /* Limit hero text width */
-    padding: 0 20px; /* Add padding for content spacing on smaller screens */
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px; /* Horizontal padding for content */
   }
   
   .profileImageContainer {
@@ -38,13 +39,13 @@
   .status {
     font-size: 1.1rem;
     color: #ccc;
-    max-width: 600px; /* Limit width for readability */
-    margin-left: auto; /* Center status text */
+    max-width: 600px;
+    margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
   }
   
-  /* Responsive font sizes */
+  /* Responsive styles remain largely the same */
   @media (max-width: 768px) {
     .name {
       font-size: 2rem;
@@ -52,8 +53,11 @@
     .status {
       font-size: 1rem;
     }
-    .heroSection {
-      padding: 0 15px; /* Adjust padding */
+     .container {
+        padding: 30px 0;
+     }
+     .heroSection {
+      padding: 0 15px;
     }
   }
   

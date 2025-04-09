@@ -1,14 +1,16 @@
-/* Container uses flex to center content vertically and horizontally */
+/* Container focuses on width and internal layout */
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Horizontal centering */
-    justify-content: center; /* Vertical centering */
-    min-height: 100%; /* Take full height of parent (mainContent) */
-    width: 100%;
-    padding: 40px 20px; /* Keep vertical padding, horizontal for content spacing */
+    align-items: center; /* Keep items centered horizontally */
+    width: 100%; /* Take full width available from mainContent */
+    max-width: 600px; /* Limit width of contact form area */
+    /* Remove properties handled by mainContent: */
+    /* justify-content: center; */
+    /* min-height: 100%; */
+    /* flex-grow: 1; */
+    padding: 40px 20px; /* Add padding */
     text-align: center;
-    flex-grow: 1; /* Ensure it grows to fill mainContent space */
   }
   
   .title {
@@ -21,10 +23,11 @@
     font-size: 1.1rem;
     color: #ccc;
     margin-bottom: 40px;
-    max-width: 500px;
+    /* max-width: 500px; Inherited from container max-width */
     line-height: 1.6;
   }
   
+  /* Responsive styles remain largely the same */
   @media (max-width: 768px) {
     .title {
       font-size: 2rem;
@@ -34,6 +37,7 @@
     }
      .container {
        padding: 30px 15px;
+       max-width: 90%; /* Allow more width on smaller screens */
      }
   }
   

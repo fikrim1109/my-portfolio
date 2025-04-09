@@ -8,15 +8,18 @@
     margin: 40px 0;
   }
   
+  /* marqueeTrack contains the items and moves */
   .marqueeTrack {
-    display: inline-block;
-    white-space: nowrap;
+    display: inline-block; /* Allows it to size based on content */
+    white-space: nowrap; /* Keep items in one line */
+    /* Will be animated via transform: translateX(...) */
   }
   
+  /* Individual item styling */
   .marqueeItem {
-    display: inline-flex;
+    display: inline-flex; /* Use flex for icon + text alignment */
     align-items: center;
-    padding: 0 40px; /* Default spacing */
+    padding: 0 40px; /* Spacing between items */
     font-size: 1.1rem;
     font-weight: 500;
     color: #ccc;
@@ -37,24 +40,25 @@
   }
   
   .itemName {
-     white-space: nowrap;
+     white-space: nowrap; /* Prevent text wrapping */
   }
   
+  /* Responsive adjustments */
   @media (max-width: 768px) {
       .marqueeItem {
-          padding: 0 30px; /* Reduce spacing a bit */
+          padding: 0 30px;
       }
       .iconWrapper {
-          font-size: 1.6rem; /* Slightly smaller icons */
+          font-size: 1.6rem;
       }
       .itemName {
-          font-size: 1rem; /* Slightly smaller text */
+          font-size: 1rem;
       }
   }
   
   @media (max-width: 480px) {
       .marqueeItem {
-          padding: 0 20px; /* Further reduce spacing */
+          padding: 0 20px;
       }
       .iconWrapper {
           font-size: 1.5rem;
@@ -63,6 +67,6 @@
           font-size: 0.9rem;
       }
        .marqueeContainer {
-          margin: 30px 0; /* Reduce vertical margin */
+          margin: 30px 0;
       }
   }

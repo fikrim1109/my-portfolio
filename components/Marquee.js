@@ -1,26 +1,29 @@
 import { motion } from 'framer-motion';
 import styles from '../styles/Marquee.module.css';
 
-const Marquee = ({ items, speed = 25 }) => { // Slower speed for icons maybe
+const Marquee = ({ items, speed = 25 }) => {
   const marqueeVariants = {
     animate: {
-      x: ['0%', '-100%'],
+      // Animate x from 0% to -50%
+      // This moves the track exactly the width of one set of items
+      x: ['0%', '-50%'],
       transition: {
         x: {
           repeat: Infinity,
           repeatType: 'loop',
-          duration: speed,
-          ease: 'linear',
+          duration: speed, // Duration controls speed
+          ease: 'linear', // Constant speed
         },
       },
     },
   };
 
-  // Duplicate items for seamless loop
+  // Duplicate items for seamless loop - IMPORTANT: Keep exactly two copies
   const extendedItems = [...items, ...items];
 
   return (
     <div className={styles.marqueeContainer}>
+      {/* The track contains BOTH copies */}
       <motion.div
         className={styles.marqueeTrack}
         variants={marqueeVariants}
