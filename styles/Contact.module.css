@@ -1,11 +1,14 @@
+/* Container uses flex to center content vertically and horizontally */
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - 80px); /* Adjust if layout padding changes significantly */
-    padding: 40px 20px;
+    align-items: center; /* Horizontal centering */
+    justify-content: center; /* Vertical centering */
+    min-height: 100%; /* Take full height of parent (mainContent) */
+    width: 100%;
+    padding: 40px 20px; /* Keep vertical padding, horizontal for content spacing */
     text-align: center;
+    flex-grow: 1; /* Ensure it grows to fill mainContent space */
   }
   
   .title {
@@ -29,10 +32,16 @@
     .subtitle {
       font-size: 1rem;
     }
+     .container {
+       padding: 30px 15px;
+     }
   }
   
   @media (max-width: 480px) {
     .title {
       font-size: 1.8rem;
+    }
+    .subtitle {
+       margin-bottom: 30px;
     }
   }

@@ -1,19 +1,22 @@
-/* Container might not need min-height anymore if content pushes it */
+/* Container uses flex to center content vertically and horizontally */
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    /* min-height: calc(100vh - 80px); Adjust if needed */
-    padding: 20px; /* Keep general padding */
-    padding-top: 0; /* Reduce top padding if layout padding is enough */
+    align-items: center; /* Horizontal centering of items */
+    justify-content: center; /* Vertical centering of items */
+    min-height: 100%; /* Take at least full height of parent (mainContent) */
+    width: 100%;
+    padding: 20px 0; /* Vertical padding, horizontal handled by parent */
     text-align: center;
+    flex-grow: 1; /* Ensure it grows to fill mainContent space */
   }
   
   .heroSection {
-    margin-top: 40px; /* Add margin if needed */
+    /* Removed margin-top, rely on container centering */
     margin-bottom: 40px;
     width: 100%; /* Ensure it takes full width */
     max-width: 800px; /* Limit hero text width */
+    padding: 0 20px; /* Add padding for content spacing on smaller screens */
   }
   
   .profileImageContainer {
@@ -50,7 +53,7 @@
       font-size: 1rem;
     }
     .heroSection {
-        margin-top: 20px;
+      padding: 0 15px; /* Adjust padding */
     }
   }
   
@@ -62,7 +65,10 @@
       font-size: 0.9rem;
     }
     .profileImage {
-        width: 120px;
-        height: 120px;
+      width: 120px;
+      height: 120px;
+    }
+    .heroSection {
+      margin-bottom: 30px;
     }
   }

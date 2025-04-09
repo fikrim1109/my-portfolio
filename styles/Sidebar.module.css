@@ -1,14 +1,19 @@
 .sidebar {
     position: fixed;
     top: 0;
-    left: 0;
+    /* Changed from left: 0 to right: 0 */
+    right: 0;
     height: 100vh;
-    width: 250px;
-    background-color: #111;
-    padding: 60px 20px 20px;
+    width: 250px; /* Adjust width as needed */
+    background-color: #111; /* Slightly lighter than pure black */
+    padding: 60px 20px 20px; /* Top padding for burger/close button space */
     z-index: 1000;
-    transform: translateX(-100%);
-    border-right: 1px solid #333;
+    /* Changed transform to move off-screen right */
+    transform: translateX(100%);
+    /* Changed border to the left */
+    border-left: 1px solid #333;
+    /* Add transition for smooth opening/closing if not using Framer Motion only */
+    /* transition: transform 0.3s ease-in-out; */
   }
   
   .navList {
@@ -26,6 +31,8 @@
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.2s ease-in-out;
+    display: block; /* Make link take full width for easier clicking */
+    padding: 5px 0;
   }
   
   .navItem a:hover {
@@ -35,15 +42,27 @@
   .overlay {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0; /* Overlay still covers full screen */
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+    z-index: 999; /* Below sidebar, above content */
+    display: block; /* Controlled by isOpen state in component */
+    cursor: pointer; /* Indicate clickable */
   }
   
-  /* Optional static sidebar styles */
-  /* @media (min-width: 768px) { */
-  /*  .sidebar { transform: translateX(0); } */
-  /*  .overlay { display: none; } */
-  /* } */
+  /* Optional: Close button styling if added */
+  /*
+  .closeButton {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+  }
+  */
+  
+  /* No media query needed here for responsiveness as it overlays */
