@@ -33,7 +33,7 @@ export default function Home() {
       <section className={styles.heroSection}>
         <div className={styles.profileImageContainer}>
           <Image
-            src="/profile.jpg"
+            src="\src\profile.jpg"
             alt="Fikri Natadiwirya Maulana Profile Picture"
             width={150}
             height={150}
